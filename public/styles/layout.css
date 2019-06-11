@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -26,11 +29,11 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main.container {
+main.container {
   position: relative;
   margin: 80px auto 0 auto;
   background-color: white;
   width: 450px;
   padding-top: 200px;
   padding-bottom: 500px;
- }
+}
