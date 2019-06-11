@@ -4,7 +4,7 @@ section.new-tweet {
     width: 95%;
     border-radius: 5px;
     border: 1px solid darkgrey;
-    padding: 1em 2em 1em 2em;
+    padding: 1em 2em;
 }
 
 .new-tweet h2 {
