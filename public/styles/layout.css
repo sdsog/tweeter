@@ -37,3 +37,11 @@ main.container {
   padding-top: 200px;
   padding-bottom: 500px;
 }
+
+#tweet-container {
+  position: relative;
+  margin: 80px auto 0 auto;
+  background-color: white;
+  width: 450px;
+  padding-bottom: 40px;
+}
