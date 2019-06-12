@@ -22,7 +22,6 @@ section.new-tweet {
   resize: vertical;
 }
 
-
 .new-tweet .counter {
   float: right;
   font-weight: 300;

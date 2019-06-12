@@ -1,4 +1,4 @@
-article.tweet-feed {
+.tweet-feed {
   background-color: white;
   margin: 10px auto;
   width: 95%;
@@ -11,18 +11,30 @@ article.tweet-feed {
   height: 90px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  color: slategrey;
 }
 
-.tweet-feed img {
+.profile-icon {
   float: left;
   width: 70px;
   height: 70px;
   border-radius: 5px;
   margin-left: 10px;
   margin-top: 10px;
+  opacity: 0.5;
 }
 
-.tweet-feed h2 {
+.profile-icon {
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+.twitter-name {
   float: left;
   border-width: 1px;
   margin: 6px auto;
@@ -30,11 +42,13 @@ article.tweet-feed {
   padding-top: 5px;
   margin-left: 10px;
   font-size: 28px;
+  color: lightgrey;
 }
 
 #tweet-container p.tweet-body {
   padding: 20px 10px;
-  font-size: 16px;
+  font-size: 18px;
+  color: slategrey;
 }
 
 .tweet-feed .handle {
@@ -43,7 +57,7 @@ article.tweet-feed {
   padding-right: 10px;
   font-size: 16px;
   margin-top: 20px;
-
+  color: slategrey;
 }
 
 .tweet-feed footer {
@@ -53,4 +67,34 @@ article.tweet-feed {
 footer .date {
   font-size: 14px;
   padding-left: 10px;
+  color: slategrey;
+  display: inline-block;
+}
+
+.icons {
+  display: none;
+}
+
+/* Hover States  — added via twitter-feed-hover-state.js */
+
+.hover-main {
+  border: 1px solid darkgrey;
+  color: slategrey;
+}
+
+.hover-h2 {
+  color: slategrey;
+}
+
+.img-hover {
+  opacity: 1;
+}
+
+.icons-hover {
+  height: 24px;
+  width: 24px;
+  float: right;
+  display: block;
+  margin-top: 10px;
+  margin-right: 8px;
 }
