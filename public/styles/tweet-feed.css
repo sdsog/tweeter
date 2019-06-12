@@ -1,30 +1,15 @@
 .tweet-feed {
   background-color: white;
-  margin: 10px auto;
+  margin: 25px auto;
   width: 95%;
   border-radius: 5px;
   border: 1px solid lightgrey;
 }
 
-.tweet-feed header {
-  background-color: lightcyan;
-  height: 90px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+.tweet-feed:hover {
+  border: 1px solid darkgrey;
   color: slategrey;
 }
-
-.profile-icon {
-  float: left;
-  width: 70px;
-  height: 70px;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-top: 10px;
-  opacity: 0.5;
-}
-
-
 
 .twitter-name {
   float: left;
@@ -33,13 +18,43 @@
   padding-bottom: 5px;
   padding-top: 5px;
   margin-left: 10px;
-  font-size: 28px;
+  font-size: 24px;
   color: lightgrey;
 }
 
+article:hover h2 {
+  color: slategrey;
+}
+
+.tweet-feed header {
+  background-color: lightcyan;
+  height: 80px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  color: slategrey;
+}
+
+.profile-pic {
+  float: left;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+article:hover .profile-pic {
+  opacity: 1;
+}
+
+
+
+
 #tweet-container p.tweet-body {
-  padding: 20px 10px;
+  padding: 10px 0;
   font-size: 18px;
+  margin: 0px 10px;
   color: slategrey;
 }
 
@@ -56,37 +71,35 @@
   border-top: 1px solid lightgrey;
 }
 
+.tweet-footer {
+  height: 50px;
+}
+
+#tweet-container footer {
+  padding: 10px;
+}
+
 footer .date {
   font-size: 14px;
-  padding-left: 10px;
+
+  margin-top: 5px;
   color: slategrey;
   display: inline-block;
 }
 
-.icons {
+img.icon {
+  margin-top: 5px;
+  float: right;
+  height: 20px;
+  width: 20px;
+  margin-left: 8px;
   display: none;
 }
 
-/* Hover States  — added via twitter-feed-hover-state.js */
-
-.hover-main {
-  border: 1px solid darkgrey;
-  color: slategrey;
+img.icon .heart {
+  margin-left: 10px;
 }
 
-.hover-h2 {
-  color: slategrey;
-}
-
-.img-hover {
-  opacity: 1;
-}
-
-.icons-hover {
-  height: 24px;
-  width: 24px;
-  float: right;
-  display: block;
-  margin-top: 10px;
-  margin-right: 8px;
+article:hover img.icon {
+  display: inline-block;
 }

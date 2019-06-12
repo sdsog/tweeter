@@ -3,8 +3,8 @@ section.new-tweet {
   margin: 10px auto;
   width: 95%;
   border-radius: 5px;
-  border: 1px solid darkgrey;
-  padding: 1em 2em;
+  border: 1px solid slategrey;
+  padding: 10px 10px;
 }
 
 .new-tweet h2 {

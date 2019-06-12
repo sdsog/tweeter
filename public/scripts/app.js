@@ -46,35 +46,51 @@ const data = [{
   }
 ];
 
+const timeAgo = (ts) => {
+  const d = new Date();
+  const nowTs = Math.floor(d.getTime() / 1000);
+  const seconds = nowTs - ts;
+
+  if (seconds > 2 * 24 * 3600) {
+    return "a few days ago";
+  }
+  if (seconds > 24 * 3600) {
+    return "yesterday";
+  }
+  if (seconds > 3600) {
+    return "a few hours ago";
+  }
+  if (seconds > 1800) {
+    return "Half an hour ago";
+  }
+  if (seconds > 60) {
+    return Math.floor(seconds / 60) + " minutes ago";
+  }
+  return "A long time ago"
+}
+
 $(document).ready(function () {
 
-
-  function renderTweets(tweets) {
-
-
-    for (let i of tweets) {
-
-      $tweet = createTweetElement(i);
-
+  const renderTweets = (tweets) => {
+    for (let tweet of tweets) {
+      $tweet = createTweetElement(tweet);
       $('#tweet-container').prepend($tweet);
     }
   }
 
-
-
   const createTweetElement = function (tweet) {
     var $article = $('<article>').addClass('tweet-feed');
     var $header = $('<header>').addClass('tweet-header').appendTo($article);
-    $('<img>').attr('src', tweet.user.avatars.small).addClass('profile-icon').appendTo($header);
+    $('<img>').attr('src', tweet.user.avatars.small).addClass('profile-pic').appendTo($header);
     $('<h2>').text(tweet.user.name).addClass('twitter-name').appendTo($header);
     $('<span>').text(tweet.user.handle).addClass('handle').appendTo($header);
     var $section = $('<p>').addClass('tweet-body').appendTo($article);
     $('<p>').text(tweet.content.text).appendTo($section);
     var $footer = $('<footer>').addClass('tweet-footer').appendTo($article);
-    $('<span>').text(tweet.created_at).addClass('date').appendTo($footer);
-    $('<img>').addClass('icon').attr('src', 'https://img.icons8.com/material-rounded/24/000000/like.png').appendTo($footer);
-    $('<img>').addClass('icon').attr('src', 'https://img.icons8.com/material/24/000000/refresh.png').appendTo($footer);
-    $('<img>').addClass('icon').attr('src', 'https://img.icons8.com/material/24/000000/filled-flag.png').appendTo($footer);
+    $('<span>').text(timeAgo(tweet.created_at)).addClass('date').appendTo($footer);
+    $('<img>').addClass('icon heart').attr('src', 'https://img.icons8.com/material-rounded/24/000000/like.png').appendTo($footer);
+    $('<img>').addClass('icon retweet').attr('src', 'https://img.icons8.com/material/24/000000/refresh.png').appendTo($footer);
+    $('<img>').addClass('icon flag').attr('src', 'https://img.icons8.com/material/24/000000/filled-flag.png').appendTo($footer);
 
     return $article;
   };
