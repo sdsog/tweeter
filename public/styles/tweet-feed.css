@@ -48,9 +48,6 @@ article:hover .profile-pic {
   opacity: 1;
 }
 
-
-
-
 #tweet-container p.tweet-body {
   padding: 10px 0;
   font-size: 18px;
@@ -81,7 +78,6 @@ article:hover .profile-pic {
 
 footer .date {
   font-size: 14px;
-
   margin-top: 5px;
   color: slategrey;
   display: inline-block;
