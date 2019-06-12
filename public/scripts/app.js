@@ -95,16 +95,6 @@ $(document).ready(function () {
     return $article;
   };
 
-
-
-
-
-  // var $tweet = createTweetElement(tweetData);
-
-  // // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $('#tweet-container').append($tweet);
-
   renderTweets(data);
 
 });
