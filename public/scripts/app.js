@@ -71,6 +71,19 @@ const timeAgo = (ts) => {
 
 $(document).ready(function () {
 
+const loadTweets = () = {
+
+  $('#fetch-posts').click(() => {
+    $.getJSON(`/tweets`, (data) => {
+        const $tweets = $('#tweets');
+        $posts.empty();
+        data.slice(5, 15).forEach(createPost);
+    });
+});
+
+
+}
+
   const renderTweets = (tweets) => {
     for (let tweet of tweets) {
       $tweet = createTweetElement(tweet);
@@ -88,13 +101,21 @@ $(document).ready(function () {
     $('<p>').text(tweet.content.text).appendTo($section);
     var $footer = $('<footer>').addClass('tweet-footer').appendTo($article);
     $('<span>').text(timeAgo(tweet.created_at)).addClass('date').appendTo($footer);
-    $('<img>').addClass('icon heart').attr('src', 'https://img.icons8.com/material-rounded/24/000000/like.png').appendTo($footer);
-    $('<img>').addClass('icon retweet').attr('src', 'https://img.icons8.com/material/24/000000/refresh.png').appendTo($footer);
-    $('<img>').addClass('icon flag').attr('src', 'https://img.icons8.com/material/24/000000/filled-flag.png').appendTo($footer);
+    $('<i>').addClass('icon heart far fa-heart').appendTo($footer);
+    $('<i>').addClass('icon retweet fas fa-retweet').appendTo($footer);
+    $('<i>').addClass('icon flag far fa-flag').appendTo($footer);
 
     return $article;
   };
 
-  renderTweets(data);
 
+  $('#newTweet').on('submit', (event) => {
+    event.preventDefault();
+    $.post(`/tweets`, $('#newTweet').serialize(), (newTweet) => {
+      createTweetElement(newTweet);
+      console.log(newTweet);
+    });
+  });
+
+  renderTweets(data);
 });
