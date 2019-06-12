@@ -33,6 +33,7 @@ $(document).ready(function () {
   }
 
   const renderTweets = (tweets) => {
+    $("#tweet-container").empty();
     for (let tweet of tweets) {
       $tweet = createTweetElement(tweet);
       $('#tweet-container').prepend($tweet);
@@ -59,10 +60,26 @@ $(document).ready(function () {
 
   $('#newTweet').on('submit', (event) => {
     event.preventDefault();
-    $.post(`/tweets`, $('#newTweet').serialize(), (newTweet) => {
-      createTweetElement(newTweet);
-      console.log(newTweet);
-    });
+
+    let lengthChecker = false;
+    //finds text length of text area
+    $textarea = $(this).find("textarea");
+    $text = $textarea.val();
+    $textLength = $text.length;
+
+    if ($textLength < 140) {
+      lengthChecker = true;
+    }
+
+    if (lengthChecker) {
+      $.post(`/tweets`, $('#newTweet').serialize(), (newTweet) => {
+        createTweetElement(newTweet);
+      });
+    } else {
+      alert("Your tweet is too long bro.");
+    }
+
+    console.log("$textLength", $textLength);
   });
 
   loadTweets();
