@@ -1,10 +1,20 @@
 section.new-tweet {
   background-color: #F6F7F8;
-  margin: 10px auto;
-  width: 95%;
+  margin: 25px auto;
+  width: 90%;
   border-radius: 5px;
-  border: 1px solid #373F51;
+  border: 1px solid #ACB0BD;
   padding: 10px 10px;
+  box-shadow: 0px 6px 8px -6px rgba(0, 0, 0, 0.20);
+}
+
+input#submitTweet {
+  border-radius: 5px;
+  background-color: #FF3366;
+  width: 100px;
+  height: 40px;
+  font-weight: 300;
+  color: #F6F7F8;
 }
 
 .new-tweet h2 {
@@ -17,7 +27,7 @@ section.new-tweet {
 .new-tweet textarea {
   width: 100%;
   padding: 10px;
-  margin: 10px auto;
+  margin: 10px auto 5px auto;
   height: 80px;
   resize: vertical;
 }
@@ -26,6 +36,7 @@ section.new-tweet {
   float: right;
   font-weight: 300;
   font-style: italic;
+  margin-top: 15px;
 }
 
 .new-tweet .red {
