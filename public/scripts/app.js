@@ -19,9 +19,6 @@ $(document).ready(function () {
 
   const createTweetElement = function (tweet) {
 
-
-
-
     var $article = $('<article>').addClass('tweet-feed');
     var $header = $('<header>').addClass('tweet-header').appendTo($article);
     $('<img>').attr('src', tweet.user.avatars.small).addClass('profile-pic').appendTo($header);
@@ -30,7 +27,7 @@ $(document).ready(function () {
     var $section = $('<p>').addClass('tweet-body').appendTo($article);
     $('<p>').text(tweet.content.text).appendTo($section);
     var $footer = $('<footer>').addClass('tweet-footer').appendTo($article);
-    $('<span>').text(moment(tweet.created_at).startOf('hour').fromNow()).addClass('date').appendTo($footer);
+    $('<span>').text(moment(tweet.created_at).startOf('minute').fromNow()).addClass('date').appendTo($footer);
     //$('<span>').text(timeAgo(tweet.created_at)).addClass('date').appendTo($footer);
     $('<i>').addClass('icon heart far fa-heart').appendTo($footer);
     $('<i>').addClass('icon retweet fas fa-retweet').appendTo($footer);
@@ -68,7 +65,7 @@ $(document).ready(function () {
           loadTweets();
         });
 
-      $message.text(" ").toggle(false);
+      $message.text("").toggle(false);
       $textarea.val("").focus();
       $counter.text("140");
     }
