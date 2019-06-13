@@ -1,9 +1,9 @@
 section.new-tweet {
-  background-color: #eee;
+  background-color: #F6F7F8;
   margin: 10px auto;
   width: 95%;
   border-radius: 5px;
-  border: 1px solid slategrey;
+  border: 1px solid #373F51;
   padding: 10px 10px;
 }
 
@@ -30,4 +30,18 @@ section.new-tweet {
 
 .new-tweet .red {
   color: red;
+}
+
+#message {
+  margin-top: 0px;
+}
+
+/* #message.fas {
+  display: block;
+  font-family: "Font Awesome 5 Pro";
+} */
+
+#message.p {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-weight: 700;
 }

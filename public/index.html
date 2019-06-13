@@ -22,6 +22,9 @@
 
   <!-- Tweet Feed CSS -->
   <link rel="stylesheet" href="/styles/tweet-feed.css" type="text/css" />
+  
+   <!-- Display Font -->
+  <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -38,6 +41,8 @@
   <!-- Form Submission -->
   <script type="text/javascript" src="/scripts/form-submission.js"></script>
 
+  <!-- Slide Tweet Box -->
+  <script type="text/javascript" src="/scripts/slide-tweet-box.js"></script>
 
 </head>
 
@@ -47,6 +52,15 @@
   <nav id="nav-bar">
     <img class="logo" src="/images/bird.png" width="80px" height="80px">
     <span class="header">Tweeter</span>
+
+    <ul class="nav-button">
+      <span id="compose-tweet">
+        <button class="compose-tweet-btn"> <i class="fas fa-pen-nib"></i>
+          <p>Compose</p>
+        </button>
+      </span>
+      </li>
+    </ul>
   </nav>
 
   <!-- Page-specific (main) content here -->
@@ -58,7 +72,8 @@
         <textarea id="tweet-text-input" class="tweet-text" name="text"
           placeholder="What are you humming about?"></textarea>
 
-        <p id="message"></p>
+        <!-- Error messages will be contained here -->
+          <p id="message"></p>
 
 
         <input type="submit" value="Tweet" id="submitTweet">

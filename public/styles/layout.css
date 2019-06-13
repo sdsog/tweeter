@@ -20,7 +20,7 @@ html {
 body {
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background-color: #F6F7F8;
   font-family: 'Roboto Condensed', sans-serif;
   width: 100%;
 }
@@ -34,14 +34,13 @@ main.container {
   margin: 80px auto 0 auto;
   background-color: white;
   width: 450px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
 }
 
 #tweet-container {
   position: relative;
-  margin: 80px auto 0 auto;
+  margin: 0 auto 0 auto;
   background-color: white;
   width: 450px;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }

@@ -61,25 +61,35 @@ $(document).ready(function () {
   $('#newTweet').on('submit', (event) => {
     event.preventDefault();
 
-    let lengthChecker = false;
+    //let lengthChecker = false;
     //finds text length of text area
     $textarea = $(this).find("textarea");
     $text = $textarea.val();
     $textLength = $text.length;
+    $counter = $(this).find(".counter").first();
+    $message = $(this).find("#message");
 
-    if ($textLength < 140) {
-      lengthChecker = true;
-    }
+    $data = $textarea.serialize();
 
-    if (lengthChecker) {
-      $.post(`/tweets`, $('#newTweet').serialize(), (newTweet) => {
-        createTweetElement(newTweet);
-      });
+    if ($textLength > 140) {
+      $message.text("Only 140 characters allowed!").toggle(true);
+      $textarea.focus();
+      console.log("text too long");
+    } else if ($text === "" || $text === null) {
+      $message.text("You can't just share nothing!").toggle(true);
+      $textarea.focus();
+      console.log("text empty");
     } else {
-      alert("Your tweet is too long bro.");
-    }
 
-    console.log("$textLength", $textLength);
+      $.post("/tweets/", $data)
+        .done(function () {
+          loadTweets();
+        });
+
+      $message.text(" ").toggle(false);
+      $textarea.val("").focus();
+      $counter.text("140");
+    }
   });
 
   loadTweets();

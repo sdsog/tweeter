@@ -3,11 +3,11 @@
   margin: 25px auto;
   width: 95%;
   border-radius: 5px;
-  border: 1px solid lightgrey;
+  border: 1px solid #373F51;
 }
 
 .tweet-feed:hover {
-  border: 1px solid darkgrey;
+  border: 1px solid #011638;
   color: slategrey;
 }
 
@@ -53,6 +53,7 @@ article:hover .profile-pic {
   font-size: 18px;
   margin: 0px 10px;
   color: slategrey;
+  word-wrap: break-word;
 }
 
 .tweet-feed .handle {
