@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta Information -->
-  <title>Tweeter - Home Page</title>
+  <title>Hummer - Home Page</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -29,7 +29,8 @@
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-  <!-- Moment JS -->
+ 
+  <!-- Moment JS for Data Stamping Tweets -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 
@@ -68,7 +69,7 @@
     </ul>
   </nav>
 
-  <!-- Page-specific (main) content here -->
+  <!-- New Tweet Box -->
   <main class="container">
 
     <section class="new-tweet">
@@ -77,16 +78,15 @@
         <textarea id="tweet-text-input" class="tweet-text" name="text"
           placeholder="What are you humming about?"></textarea>
 
-        <!-- Error messages will be contained here -->
+        <!-- Error messages will be shown here -->
         <p id="message"></p>
-
 
         <input type="submit" value="Hum" id="submitTweet">
         <span class="counter">140</span>
       </form>
     </section>
 
-    <!-- Tweet feed -->
+    <!-- Tweet feed containter -->
     <section id="tweet-container">
     </section>
 
