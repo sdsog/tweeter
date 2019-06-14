@@ -15,6 +15,7 @@ Hummer is a simple, intuitive, single-page Twitter clone utilizing bleeding edge
 - Moment
 - MongoDB
 - nodemon
+- chance
 
 ## Getting Started
 
