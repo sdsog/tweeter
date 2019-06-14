@@ -40,7 +40,7 @@ $(document).ready(function () {
     return $article;
   };
 
- //event listener to submit button for new tweet 
+  //event listener to submit button for new tweet 
   $('#newTweet').on('submit', (event) => {
     event.preventDefault();
 
@@ -56,7 +56,7 @@ $(document).ready(function () {
     //prepare data for Ajax calling
     $data = $textarea.serialize();
 
-  
+
     if ($textLength > 140) {
 
       //message for over 140 characters
